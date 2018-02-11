@@ -13,7 +13,7 @@ import (
 func main() {
 	app := cli.NewApp()
 	app.Version = "0.9.0"
-	app.Description = "The application provide ability to debug HTPP requests"
+	app.Description = "The application provide ability to debug HTTP requests"
 	app.Usage = "HTTP Debug"
 
 	app.Flags = []cli.Flag{
@@ -33,7 +33,11 @@ func main() {
 		})
 
 		log.Println("Listening on: ", port)
-		http.ListenAndServe(fmt.Sprintf(":%d", port), nil)
+		err := http.ListenAndServe(fmt.Sprintf(":%d", port), nil)
+
+		if err != nil {
+			log.Fatalln(err.Error())
+		}
 
 		return nil
 	}
