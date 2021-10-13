@@ -18,8 +18,8 @@ jobs:
       with:
         go-version: 1.17
 
-    - name: Test
-      run: go test -v ./...
+#     - name: Test
+#       run: go test -v ./...
       
     - name: Build linux amd64
       run: GOOS=linux GOARCH=amd64 go build -o ./http-debug-server_linux-amd64 http-debug-server
