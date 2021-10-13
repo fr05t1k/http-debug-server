@@ -22,16 +22,13 @@ jobs:
       run: go test -v ./...
       
     - name: Build linux amd64
-      run: GOOS=linux GOARCH=amd64 go build -o ./http-debug-server_linux-amd64 http-debug
--server
+      run: GOOS=linux GOARCH=amd64 go build -o ./http-debug-server_linux-amd64 http-debug-server
 
     - name: Build darwin amd64
-      run: GOOS=darwin GOARCH=amd64 go build -o ./http-debug-server_darwin-amd64 http-debug
--server
+      run: GOOS=darwin GOARCH=amd64 go build -o ./http-debug-server_darwin-amd64 http-debug-server
 
     - name: Build darwin arm64
-      run: GOOS=darwin GOARCH=arm64 go build -o ./http-debug-server_darwin-arm64 http-debug
--server
+      run: GOOS=darwin GOARCH=arm64 go build -o ./http-debug-server_darwin-arm64 http-debug-server
 
     - name: Upload http-debug-server_linux-amd64
       uses: actions/upload-artifact@v2.2.4
