@@ -10,9 +10,11 @@ import (
 	"github.com/urfave/cli"
 )
 
+var Version = "dev"
+
 func main() {
 	app := cli.NewApp()
-	app.Version = "0.9.0"
+	app.Version = Version
 	app.Description = "The application provide ability to debug HTTP requests"
 	app.Usage = "HTTP Debug"
 
